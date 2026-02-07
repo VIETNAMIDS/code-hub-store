@@ -1,2 +1,0 @@
--- Remove the overly permissive policy
-DROP POLICY IF EXISTS "System can insert notifications" ON public.notifications;
