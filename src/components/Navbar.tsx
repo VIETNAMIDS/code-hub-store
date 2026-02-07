@@ -231,34 +231,42 @@ export function Navbar() {
 
   // Desktop vertical sidebar
   return (
-    <aside className={cn(
-      "fixed left-0 top-0 h-screen z-50 transition-all duration-300 glass-strong border-r border-primary/10",
-      sidebarCollapsed ? "w-16" : "w-60"
-    )}>
-      <div className="flex flex-col h-full p-3">
-        {/* Logo */}
-        <Link to="/" className="flex items-center justify-center group mb-6 px-2">
-          <img 
-            src={bonzshopLogo} 
-            alt="BonzShop" 
-            className={cn(
-              "object-contain transition-all duration-300 group-hover:scale-105",
-              sidebarCollapsed ? "h-12 w-12" : "h-20 w-auto max-w-full"
-            )}
-          />
-        </Link>
-
-        {/* Collapse Button */}
+    <>
+      {/* Floating Menu Button - shows when sidebar is fully hidden */}
+      {sidebarCollapsed && (
         <button
-          onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-          className="absolute -right-3 top-16 w-6 h-6 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center hover:bg-primary/30 transition-colors"
+          onClick={() => setSidebarCollapsed(false)}
+          className="fixed left-4 top-4 z-50 w-12 h-12 rounded-xl glass-strong border border-primary/20 flex items-center justify-center hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-primary/20 group"
+          title="Mở menu"
         >
-          {sidebarCollapsed ? (
-            <ChevronRight className="h-3 w-3 text-primary" />
-          ) : (
-            <ChevronLeft className="h-3 w-3 text-primary" />
-          )}
+          <Menu className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
         </button>
+      )}
+
+      <aside className={cn(
+        "fixed left-0 top-0 h-screen z-50 transition-all duration-300 glass-strong border-r border-primary/10",
+        sidebarCollapsed ? "-translate-x-full opacity-0 pointer-events-none" : "translate-x-0 opacity-100 w-60"
+      )}>
+        <div className="flex flex-col h-full p-3">
+          {/* Logo & Close Button */}
+          <div className="flex items-center justify-between mb-6 px-2">
+            <Link to="/" className="flex items-center group flex-1">
+              <img 
+                src={bonzshopLogo} 
+                alt="BonzShop" 
+                className="h-16 w-auto max-w-full object-contain transition-all duration-300 group-hover:scale-105"
+              />
+            </Link>
+            
+            {/* Close Button */}
+            <button
+              onClick={() => setSidebarCollapsed(true)}
+              className="w-8 h-8 rounded-lg bg-secondary/50 hover:bg-destructive/20 flex items-center justify-center transition-colors group"
+              title="Ẩn menu"
+            >
+              <X className="h-4 w-4 text-muted-foreground group-hover:text-destructive transition-colors" />
+            </button>
+          </div>
 
         {/* Navigation Links */}
         <nav className="flex-1 space-y-1 overflow-y-auto">
@@ -274,7 +282,6 @@ export function Navbar() {
                   ? "bg-primary/20 text-primary shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]"
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
               )}
-              title={sidebarCollapsed ? link.label : undefined}
             >
               {link.icon ? (
                 <div className={cn(
@@ -290,7 +297,7 @@ export function Navbar() {
                   <Home className="h-4 w-4 text-primary" />
                 </div>
               )}
-              {!sidebarCollapsed && <span className="font-medium text-sm">{link.label}</span>}
+              <span className="font-medium text-sm">{link.label}</span>
             </Link>
           ))}
         </nav>
@@ -300,34 +307,28 @@ export function Navbar() {
           {user ? (
             <>
               {/* Notification */}
-              <div className={cn("flex items-center gap-3 px-3 py-2", sidebarCollapsed && "justify-center")}>
+              <div className="flex items-center gap-3 px-3 py-2">
                 <NotificationBell />
-                {!sidebarCollapsed && <span className="text-sm text-muted-foreground">Thông báo</span>}
+                <span className="text-sm text-muted-foreground">Thông báo</span>
               </div>
 
               {/* Coin Balance */}
               <Link
                 to="/buy-coins"
-                className={cn(
-                  "flex items-center gap-3 px-3 py-2 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40 transition-colors",
-                  sidebarCollapsed && "justify-center"
-                )}
-                title={sidebarCollapsed ? `${coinBalance} xu` : undefined}
+                className="flex items-center gap-3 px-3 py-2 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 hover:border-primary/40 transition-colors"
               >
                 <div className="w-8 h-8 rounded-lg bg-warning/20 flex items-center justify-center flex-shrink-0">
                   <Coins className="h-4 w-4 text-warning" />
                 </div>
-                {!sidebarCollapsed && (
-                  <div className="flex-1 min-w-0">
-                    <span className="font-semibold text-sm">{coinBalance !== null ? `${coinBalance} xu` : '...'}</span>
-                    <div className="flex items-center gap-1">
-                      <Sparkles className="h-3 w-3 text-primary/50" />
-                      <Link to="/coin-history" className="text-xs text-muted-foreground hover:text-primary">
-                        Lịch sử
-                      </Link>
-                    </div>
+                <div className="flex-1 min-w-0">
+                  <span className="font-semibold text-sm">{coinBalance !== null ? `${coinBalance} xu` : '...'}</span>
+                  <div className="flex items-center gap-1">
+                    <Sparkles className="h-3 w-3 text-primary/50" />
+                    <Link to="/coin-history" className="text-xs text-muted-foreground hover:text-primary">
+                      Lịch sử
+                    </Link>
                   </div>
-                )}
+                </div>
               </Link>
 
               {isAdmin && (
@@ -337,15 +338,13 @@ export function Navbar() {
                     "flex items-center gap-3 px-3 py-2 rounded-xl transition-colors",
                     isActive('/admin')
                       ? "bg-warning/20 text-warning"
-                      : "hover:bg-secondary/50 text-muted-foreground hover:text-foreground",
-                    sidebarCollapsed && "justify-center"
+                      : "hover:bg-secondary/50 text-muted-foreground hover:text-foreground"
                   )}
-                  title={sidebarCollapsed ? "Admin" : undefined}
                 >
                   <div className="w-8 h-8 rounded-lg bg-warning/20 flex items-center justify-center flex-shrink-0">
                     <Shield className="h-4 w-4 text-warning" />
                   </div>
-                  {!sidebarCollapsed && <span className="font-medium text-sm">Admin</span>}
+                  <span className="font-medium text-sm">Admin</span>
                 </Link>
               )}
 
@@ -356,59 +355,48 @@ export function Navbar() {
                     "flex items-center gap-3 px-3 py-2 rounded-xl transition-colors",
                     isActive('/seller-accounts')
                       ? "bg-success/20 text-success"
-                      : "hover:bg-secondary/50 text-muted-foreground hover:text-foreground",
-                    sidebarCollapsed && "justify-center"
+                      : "hover:bg-secondary/50 text-muted-foreground hover:text-foreground"
                   )}
-                  title={sidebarCollapsed ? "Upload" : undefined}
                 >
                   <div className="w-8 h-8 rounded-lg bg-success/20 flex items-center justify-center flex-shrink-0">
                     <Store className="h-4 w-4 text-success" />
                   </div>
-                  {!sidebarCollapsed && <span className="font-medium text-sm">Upload</span>}
+                  <span className="font-medium text-sm">Upload</span>
                 </Link>
               )}
 
               {/* User Profile */}
               <Link
                 to="/user-profile"
-                className={cn(
-                  "flex items-center gap-3 px-3 py-2 rounded-xl transition-colors hover:bg-secondary/50",
-                  sidebarCollapsed && "justify-center"
-                )}
-                title={sidebarCollapsed ? displayName || user.email : undefined}
+                className="flex items-center gap-3 px-3 py-2 rounded-xl transition-colors hover:bg-secondary/50"
               >
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
                   <User className="h-4 w-4 text-primary" />
                 </div>
-                {!sidebarCollapsed && (
-                  <span className="text-sm font-medium truncate">{displayName || user.email?.split('@')[0]}</span>
-                )}
+                <span className="text-sm font-medium truncate">{displayName || user.email?.split('@')[0]}</span>
               </Link>
 
               {/* Sign Out */}
               <button
                 onClick={handleSignOut}
-                className={cn(
-                  "w-full flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-destructive/10 text-destructive/70 hover:text-destructive transition-colors",
-                  sidebarCollapsed && "justify-center"
-                )}
-                title={sidebarCollapsed ? "Đăng xuất" : undefined}
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-destructive/10 text-destructive/70 hover:text-destructive transition-colors"
               >
                 <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center flex-shrink-0">
                   <LogOut className="h-4 w-4" />
                 </div>
-                {!sidebarCollapsed && <span className="font-medium text-sm">Đăng xuất</span>}
+                <span className="font-medium text-sm">Đăng xuất</span>
               </button>
             </>
           ) : (
             <Link to="/auth" className="block">
-              <Button variant="gradient" className={cn("w-full", sidebarCollapsed && "px-2")}>
-                {sidebarCollapsed ? <User className="h-4 w-4" /> : "Đăng nhập"}
+              <Button variant="gradient" className="w-full">
+                Đăng nhập
               </Button>
             </Link>
           )}
         </div>
       </div>
     </aside>
+    </>
   );
 }
