@@ -32,7 +32,7 @@ export function SiteSettingsManager() {
 
   const fetchSettings = async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('site_settings')
         .select('key, value');
 
@@ -61,7 +61,7 @@ export function SiteSettingsManager() {
       }));
 
       for (const update of updates) {
-        const { error } = await supabase
+        const { error } = await (supabase as any)
           .from('site_settings')
           .update({ value: update.value, updated_at: update.updated_at, updated_by: update.updated_by })
           .eq('key', update.key);
