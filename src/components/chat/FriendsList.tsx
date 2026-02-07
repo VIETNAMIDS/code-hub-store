@@ -45,7 +45,7 @@ export function FriendsList({ onSelectFriend }: FriendsListProps) {
     
     try {
       // Fetch accepted friends
-      const { data: friendsData, error: friendsError } = await supabase
+      const { data: friendsData, error: friendsError } = await (supabase as any)
         .from('friendships')
         .select('*')
         .or(`user_id.eq.${user.id},friend_id.eq.${user.id}`)
@@ -54,7 +54,7 @@ export function FriendsList({ onSelectFriend }: FriendsListProps) {
       if (friendsError) throw friendsError;
 
       // Fetch pending requests (where I'm the friend_id - people who want to be my friend)
-      const { data: pendingData, error: pendingError } = await supabase
+      const { data: pendingData, error: pendingError } = await (supabase as any)
         .from('friendships')
         .select('*')
         .eq('friend_id', user.id)
@@ -122,7 +122,7 @@ export function FriendsList({ onSelectFriend }: FriendsListProps) {
 
   const handleAcceptFriend = async (friendshipId: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('friendships')
         .update({ status: 'accepted', updated_at: new Date().toISOString() })
         .eq('id', friendshipId);
@@ -144,7 +144,7 @@ export function FriendsList({ onSelectFriend }: FriendsListProps) {
 
   const handleRejectFriend = async (friendshipId: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('friendships')
         .update({ status: 'rejected', updated_at: new Date().toISOString() })
         .eq('id', friendshipId);

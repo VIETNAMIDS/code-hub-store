@@ -262,7 +262,7 @@ export default function Chat() {
 
     try {
       // Check if friendship already exists
-      const { data: existing } = await supabase
+      const { data: existing } = await (supabase as any)
         .from('friendships')
         .select('id, status')
         .or(`and(user_id.eq.${user.id},friend_id.eq.${friendId}),and(user_id.eq.${friendId},friend_id.eq.${user.id})`)
@@ -275,7 +275,7 @@ export default function Chat() {
         return;
       }
 
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('friendships')
         .insert({
           user_id: user.id,

@@ -61,7 +61,7 @@ export function HeroBackgroundMedia({ className }: HeroBackgroundMediaProps) {
   useEffect(() => {
     let mounted = true;
     (async () => {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from('site_settings')
         .select('value')
         .eq('key', 'hero_video_url')

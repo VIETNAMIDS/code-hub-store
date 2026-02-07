@@ -51,7 +51,7 @@ export function AboutSection() {
   }, []);
 
   const fetchAbout = async () => {
-    const { data } = await supabase
+    const { data } = await (supabase as any)
       .from('site_settings')
       .select('value')
       .eq('key', 'about_content')

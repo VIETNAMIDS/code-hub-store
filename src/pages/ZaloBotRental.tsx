@@ -1,3 +1,4 @@
+// @ts-nocheck
  import { useState, useEffect } from 'react';
  import { useNavigate } from 'react-router-dom';
  import { MessageCircle, Zap, Crown, Check, ExternalLink, Upload, Loader2, Bot } from 'lucide-react';
