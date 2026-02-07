@@ -2,7 +2,10 @@ import { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader2, Clock, CheckCircle, XCircle, Eye, EyeOff, Copy, ShoppingBag, Bell, Download, Package, User } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
@@ -224,7 +227,11 @@ export default function MyOrders() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -550,7 +557,10 @@ export default function MyOrders() {
           )}
         </DialogContent>
       </Dialog>
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

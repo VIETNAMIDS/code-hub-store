@@ -1,6 +1,11 @@
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
 import { Mail, Phone, Facebook, MessageCircle, ExternalLink } from 'lucide-react';
+=======
+import { Mail, Phone, Facebook, MessageCircle, ExternalLink } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
 export default function Contact() {
   const contactInfo = [
@@ -30,7 +35,11 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+      
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -80,7 +89,10 @@ export default function Contact() {
           </div>
         </div>
       </main>
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

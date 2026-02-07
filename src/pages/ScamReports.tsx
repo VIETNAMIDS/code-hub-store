@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -74,7 +77,10 @@ export default function ScamReports() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
@@ -206,7 +212,10 @@ export default function ScamReports() {
           </div>
         )}
       </div>
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

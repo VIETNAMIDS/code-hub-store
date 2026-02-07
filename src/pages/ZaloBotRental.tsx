@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// @ts-nocheck
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
  import { useState, useEffect } from 'react';
  import { useNavigate } from 'react-router-dom';
  import { MessageCircle, Zap, Crown, Check, ExternalLink, Upload, Loader2, Bot } from 'lucide-react';

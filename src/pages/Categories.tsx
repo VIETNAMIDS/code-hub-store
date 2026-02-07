@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Code, Bot, Globe, Gamepad2, Wrench, Package } from 'lucide-react';
 
 interface Category {
@@ -73,7 +76,10 @@ export default function Categories() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">Danh mục</h1>
@@ -115,7 +121,10 @@ export default function Categories() {
           </div>
         )}
       </main>
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

@@ -16,7 +16,10 @@ import AdminCoinPurchases from "./pages/AdminCoinPurchases";
 import AdminWithdrawals from "./pages/AdminWithdrawals";
 import AdminPosts from "./pages/AdminPosts";
 import AdminScamReports from "./pages/AdminScamReports";
+<<<<<<< HEAD
 import AdminChildWebsites from "./pages/AdminChildWebsites";
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import Accounts from "./pages/Accounts";
 import MyOrders from "./pages/MyOrders";
 import Categories from "./pages/Categories";
@@ -33,9 +36,13 @@ import SellerWallet from "./pages/SellerWallet";
 import UserProfile from "./pages/UserProfile";
 import BuyCoins from "./pages/BuyCoins";
 import Chat from "./pages/Chat";
+<<<<<<< HEAD
 import CoinHistory from "./pages/CoinHistory";
 import MyWebsites from "./pages/MyWebsites";
 import ChildWebsiteRouter from "./pages/ChildWebsiteRouter";
+=======
+ import CoinHistory from "./pages/CoinHistory";
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -71,7 +78,10 @@ const App = () => (
               <Route path="/admin/withdrawals" element={<AdminWithdrawals />} />
               <Route path="/admin/posts" element={<AdminPosts />} />
               <Route path="/admin/scam-reports" element={<AdminScamReports />} />
+<<<<<<< HEAD
               <Route path="/admin/child-websites" element={<AdminChildWebsites />} />
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
               <Route path="/seller-setup" element={<SellerSetup />} />
               <Route path="/seller-profile" element={<SellerProfile />} />
               <Route path="/seller-accounts" element={<SellerAccounts />} />
@@ -82,9 +92,13 @@ const App = () => (
               <Route path="/user-profile" element={<UserProfile />} />
               <Route path="/buy-coins" element={<BuyCoins />} />
               <Route path="/chat" element={<Chat />} />
+<<<<<<< HEAD
               <Route path="/coin-history" element={<CoinHistory />} />
               <Route path="/my-websites" element={<MyWebsites />} />
               <Route path="/store/:slug/*" element={<ChildWebsiteRouter />} />
+=======
+               <Route path="/coin-history" element={<CoinHistory />} />
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
               
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -213,9 +216,15 @@ export default function BuyCoins() {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
+<<<<<<< HEAD
         <PageWrapper className="flex items-center justify-center py-20">
           <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </PageWrapper>
+=======
+        <div className="flex items-center justify-center py-20">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </div>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       </div>
     );
   }
@@ -223,7 +232,11 @@ export default function BuyCoins() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+      
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -415,7 +428,10 @@ export default function BuyCoins() {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

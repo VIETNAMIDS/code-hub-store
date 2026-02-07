@@ -1,11 +1,18 @@
 import { useEffect, useState, useCallback, lazy, Suspense } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
+<<<<<<< HEAD
 import { Search, Filter, Sparkles, ShoppingCart, QrCode, CheckCircle, Loader2, Clock, XCircle, Download, TrendingUp, Users, Package, Star, ArrowRight, Zap, Shield, Rocket } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import { HeroBackgroundMedia } from '@/components/home/HeroBackgroundMedia';
 import { ProductCard } from '@/components/ProductCard';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
+=======
+import { Code2, Search, Filter, Sparkles, ShoppingCart, QrCode, CheckCircle, Loader2, Clock, XCircle, Download, TrendingUp, Users, Package, Star, ArrowRight, Zap, Shield, Rocket } from 'lucide-react';
+import { Navbar } from '@/components/Navbar';
+import { HeroBackgroundMedia } from '@/components/home/HeroBackgroundMedia';
+import { ProductCard } from '@/components/ProductCard';
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -14,7 +21,10 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+<<<<<<< HEAD
 import bonzshopLogo from '@/assets/bonzshop-logo.png';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
 // Lazy load 3D components for performance
 const Scene3DBackground = lazy(() => import('@/components/3d/Scene3DBackground').then(m => ({ default: m.Scene3DBackground })));
@@ -78,7 +88,10 @@ export default function Index() {
   const { user, isLoading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+<<<<<<< HEAD
   const isMobile = useIsMobile();
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -315,11 +328,18 @@ export default function Index() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
+<<<<<<< HEAD
         <img 
           src={bonzshopLogo} 
           alt="BonzShop" 
           className="h-40 md:h-56 w-auto animate-pulse"
         />
+=======
+        <div className="relative">
+          <Code2 className="h-16 w-16 text-primary animate-pulse-glow" />
+          <div className="absolute inset-0 bg-primary/20 blur-2xl" />
+        </div>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       </div>
     );
   }
@@ -329,7 +349,11 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <div className={cn("transition-all duration-300", !isMobile && "ml-60")}>
+=======
+      
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       {/* 3D Background */}
       <Suspense fallback={null}>
         <Scene3DBackground />
@@ -350,6 +374,7 @@ export default function Index() {
 
         <div className="container mx-auto relative">
           <div className="text-center max-w-4xl mx-auto">
+<<<<<<< HEAD
             {/* Logo */}
             <div className="mx-auto mb-8 animate-fade-in">
               <img 
@@ -357,6 +382,17 @@ export default function Index() {
                 alt="BonzShop" 
                 className="h-48 md:h-64 lg:h-80 w-auto object-contain mx-auto drop-shadow-[0_0_50px_rgba(168,85,247,0.5)]"
               />
+=======
+            {/* 3D Logo */}
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 animate-fade-in">
+              <Suspense fallback={
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-accent animate-pulse" />
+                </div>
+              }>
+                <FloatingLogo3D />
+              </Suspense>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
             </div>
 
             {/* Badge */}
@@ -554,7 +590,11 @@ export default function Index() {
               </div>
               <div className="relative">
                 <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mx-auto mb-6 border border-border/50">
+<<<<<<< HEAD
                   <Package className="h-12 w-12 text-muted-foreground/30" />
+=======
+                  <Code2 className="h-12 w-12 text-muted-foreground/30" />
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   Chưa có sản phẩm nào
@@ -630,7 +670,12 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
+<<<<<<< HEAD
               <img src={bonzshopLogo} alt="BonzShop" className="h-10 w-auto object-contain" />
+=======
+              <Code2 className="h-6 w-6 text-primary" />
+              <span className="font-bold text-gradient">Bonz Shop</span>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
             </div>
             <p className="text-sm text-muted-foreground">
               © 2024 Bonz Shop. All rights reserved.
@@ -696,7 +741,10 @@ export default function Index() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+<<<<<<< HEAD
       </div>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

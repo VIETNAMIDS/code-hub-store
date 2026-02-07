@@ -2,7 +2,10 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { ProductCard } from '@/components/ProductCard';
 import { Gift, Sparkles, Download, CheckCircle, Clock, Search, Filter } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -84,7 +87,11 @@ export default function Free() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+      
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="mb-12">
@@ -201,7 +208,10 @@ export default function Free() {
           </div>
         )}
       </main>
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

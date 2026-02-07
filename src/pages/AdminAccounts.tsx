@@ -9,7 +9,10 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { Badge } from '@/components/ui/badge';
 import { adminAccountsApi, verifyAdminApi } from '@/hooks/useAdminApi';
+<<<<<<< HEAD
 import { ImageUploadInput } from '@/components/ui/image-upload-input';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
 interface Account {
   id: string;
@@ -522,6 +525,7 @@ export default function AdminAccounts() {
                   />
                 </div>
 
+<<<<<<< HEAD
                 <ImageUploadInput
                   value={formData.image_url}
                   onChange={(value) => setFormData({ ...formData, image_url: value })}
@@ -530,6 +534,17 @@ export default function AdminAccounts() {
                   bucket="images"
                   folder="accounts"
                 />
+=======
+                <div className="space-y-1.5">
+                  <label className="text-sm font-medium">URL Hình ảnh</label>
+                  <Input
+                    value={formData.image_url}
+                    onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
+                    placeholder="https://..."
+                    className="h-12"
+                  />
+                </div>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
                 <div className="flex gap-3 pt-2">
                   <Button type="button" variant="outline" onClick={resetForm} className="flex-1 h-12">

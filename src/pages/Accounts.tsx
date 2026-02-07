@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Navbar } from "@/components/Navbar";
+<<<<<<< HEAD
 import { PageWrapper } from "@/components/layout/PageWrapper";
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
  import { ProductViewDialog } from "@/components/ProductViewDialog";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -481,7 +484,11 @@ const Accounts = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+      
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <main className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -942,7 +949,10 @@ const Accounts = () => {
          onBuy={handleBuy}
          onClaimFree={handleClaimFreeAccount}
        />
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 };

@@ -20,7 +20,11 @@ export function HeroSection() {
   }, []);
 
   const fetchSettings = async () => {
+<<<<<<< HEAD
     const { data } = await supabase
+=======
+    const { data } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       .from('site_settings')
       .select('key, value')
       .in('key', ['hero_video_url', 'hero_title', 'hero_subtitle']);

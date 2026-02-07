@@ -4,7 +4,10 @@ import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
  import { useTaskProgress } from '@/hooks/useTaskProgress';
 import { Navbar } from '@/components/Navbar';
+<<<<<<< HEAD
 import { PageWrapper } from '@/components/layout/PageWrapper';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -263,7 +266,11 @@ export default function Chat() {
 
     try {
       // Check if friendship already exists
+<<<<<<< HEAD
       const { data: existing } = await supabase
+=======
+      const { data: existing } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('friendships')
         .select('id, status')
         .or(`and(user_id.eq.${user.id},friend_id.eq.${friendId}),and(user_id.eq.${friendId},friend_id.eq.${user.id})`)
@@ -276,7 +283,11 @@ export default function Chat() {
         return;
       }
 
+<<<<<<< HEAD
       const { error } = await supabase
+=======
+      const { error } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('friendships')
         .insert({
           user_id: user.id,
@@ -374,7 +385,10 @@ export default function Chat() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+<<<<<<< HEAD
       <PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       <div className="container mx-auto px-4 py-6 max-w-4xl">
         <Card className="glass-strong border-primary/20 overflow-hidden">
           {/* Header */}
@@ -534,7 +548,10 @@ export default function Chat() {
           }}
         />
       )}
+<<<<<<< HEAD
       </PageWrapper>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     </div>
   );
 }

@@ -13,7 +13,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useToast } from '@/hooks/use-toast';
+<<<<<<< HEAD
 import { ImageUploadInput } from '@/components/ui/image-upload-input';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Loader2, Plus, Pencil, Trash2, Skull, ArrowLeft, Eye, EyeOff } from 'lucide-react';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
@@ -279,6 +282,7 @@ export default function AdminScamReports() {
                     rows={3}
                   />
                 </div>
+<<<<<<< HEAD
                 <ImageUploadInput
                   value={formData.image_url}
                   onChange={(value) => setFormData({ ...formData, image_url: value })}
@@ -287,6 +291,16 @@ export default function AdminScamReports() {
                   bucket="images"
                   folder="scam-reports"
                 />
+=======
+                <div>
+                  <Label>URL ảnh minh họa</Label>
+                  <Input
+                    value={formData.image_url}
+                    onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
+                    placeholder="https://..."
+                  />
+                </div>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
                 <div>
                   <Label>Mức độ nghiêm trọng</Label>
                   <Select

@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { ArrowLeft, Plus, Trash2, Edit, Save, X, Loader2, Users, FolderOpen, Gift, User, ShoppingCart, Store, Coins, Package, Upload, FileText, Settings, Skull, Ticket, Globe } from 'lucide-react';
+=======
+import { ArrowLeft, Plus, Trash2, Edit, Save, X, Loader2, Users, FolderOpen, Gift, User, ShoppingCart, Store, Coins, Package, Upload, FileText, Settings, Skull, Ticket } from 'lucide-react';
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { Navbar } from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,7 +16,10 @@ import { adminProductsApi, verifyAdminApi } from '@/hooks/useAdminApi';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { SiteSettingsManager } from '@/components/admin/SiteSettingsManager';
 import { DiscountCodeManager } from '@/components/admin/DiscountCodeManager';
+<<<<<<< HEAD
 import { ImageUploadInput } from '@/components/ui/image-upload-input';
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
 interface Product {
   id: string;
@@ -417,12 +424,15 @@ export default function Admin() {
                 Rút tiền
               </Button>
             </Link>
+<<<<<<< HEAD
             <Link to="/admin/child-websites" className="contents">
               <Button variant="outline" size="sm" className="gap-2 text-xs sm:text-sm border-primary/30 hover:bg-primary/10">
                 <Globe className="h-4 w-4 text-primary" />
                 Web Con
               </Button>
             </Link>
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
             <Link to="/seller-profile" className="contents">
               <Button variant="outline" size="sm" className="gap-2 text-xs sm:text-sm">
                 <Store className="h-4 w-4" />
@@ -513,6 +523,7 @@ export default function Admin() {
                 </div>
 
                 {/* Link ảnh - Luôn hiển thị */}
+<<<<<<< HEAD
                 <ImageUploadInput
                   value={formData.image_url}
                   onChange={(value) => setFormData({ ...formData, image_url: value })}
@@ -521,6 +532,29 @@ export default function Admin() {
                   bucket="images"
                   folder="products"
                 />
+=======
+                <div className="space-y-1.5">
+                  <label className="text-sm font-medium">Link ảnh (thumbnail)</label>
+                  <Input
+                    value={formData.image_url}
+                    onChange={(e) => setFormData({ ...formData, image_url: e.target.value })}
+                    placeholder="https://i.imgur.com/... hoặc URL ảnh"
+                    className="h-12"
+                  />
+                  {formData.image_url && (
+                    <div className="mt-2 rounded-lg overflow-hidden border border-border">
+                      <img 
+                        src={formData.image_url} 
+                        alt="Preview" 
+                        className="w-full h-32 object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 
                 {/* Danh mục */}
                 <div className="space-y-1.5">

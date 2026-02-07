@@ -14,6 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
+<<<<<<< HEAD
       accounts: {
         Row: {
           account_email: string | null
@@ -40,6 +41,66 @@ export type Database = {
           platform: string
           price: number
           seller_id: string
+=======
+      account_credentials: {
+        Row: {
+          account_email: string | null
+          account_id: string
+          account_password: string
+          account_phone: string | null
+          created_at: string
+          id: string
+        }
+        Insert: {
+          account_email?: string | null
+          account_id: string
+          account_password: string
+          account_phone?: string | null
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          account_email?: string | null
+          account_id?: string
+          account_password?: string
+          account_phone?: string | null
+          created_at?: string
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "account_credentials_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: true
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "account_credentials_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: true
+            referencedRelation: "accounts_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      accounts: {
+        Row: {
+          account_email: string | null
+          account_password: string
+          account_phone: string | null
+          account_username: string
+          category: string
+          created_at: string
+          created_by: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          is_free: boolean
+          is_sold: boolean
+          price: number
+          seller_id: string | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           sold_at: string | null
           sold_to: string | null
           title: string
@@ -47,6 +108,7 @@ export type Database = {
         }
         Insert: {
           account_email?: string | null
+<<<<<<< HEAD
           account_password?: string | null
           account_phone?: string | null
           account_type: string
@@ -70,6 +132,21 @@ export type Database = {
           platform: string
           price?: number
           seller_id: string
+=======
+          account_password: string
+          account_phone?: string | null
+          account_username: string
+          category?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_free?: boolean
+          is_sold?: boolean
+          price?: number
+          seller_id?: string | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           sold_at?: string | null
           sold_to?: string | null
           title: string
@@ -77,6 +154,7 @@ export type Database = {
         }
         Update: {
           account_email?: string | null
+<<<<<<< HEAD
           account_password?: string | null
           account_phone?: string | null
           account_type?: string
@@ -100,6 +178,21 @@ export type Database = {
           platform?: string
           price?: number
           seller_id?: string
+=======
+          account_password?: string
+          account_phone?: string | null
+          account_username?: string
+          category?: string
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_free?: boolean
+          is_sold?: boolean
+          price?: number
+          seller_id?: string | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           sold_at?: string | null
           sold_to?: string | null
           title?: string
@@ -126,26 +219,39 @@ export type Database = {
         Row: {
           banned_at: string
           banned_by: string | null
+<<<<<<< HEAD
           device_fingerprint: string | null
           id: string
           ip_address: string | null
           reason: string
           user_agent: string | null
           user_id: string | null
+=======
+          id: string
+          reason: string | null
+          user_id: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Insert: {
           banned_at?: string
           banned_by?: string | null
+<<<<<<< HEAD
           device_fingerprint?: string | null
           id?: string
           ip_address?: string | null
           reason: string
           user_agent?: string | null
           user_id?: string | null
+=======
+          id?: string
+          reason?: string | null
+          user_id: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Update: {
           banned_at?: string
           banned_by?: string | null
+<<<<<<< HEAD
           device_fingerprint?: string | null
           id?: string
           ip_address?: string | null
@@ -195,6 +301,13 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+=======
+          id?: string
+          reason?: string | null
+          user_id?: string
+        }
+        Relationships: []
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       }
       categories: {
         Row: {
@@ -202,10 +315,14 @@ export type Database = {
           description: string | null
           icon: string | null
           id: string
+<<<<<<< HEAD
           is_active: boolean | null
           name: string
           slug: string
           sort_order: number | null
+=======
+          name: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           updated_at: string
         }
         Insert: {
@@ -213,10 +330,14 @@ export type Database = {
           description?: string | null
           icon?: string | null
           id?: string
+<<<<<<< HEAD
           is_active?: boolean | null
           name: string
           slug?: string
           sort_order?: number | null
+=======
+          name: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           updated_at?: string
         }
         Update: {
@@ -224,10 +345,14 @@ export type Database = {
           description?: string | null
           icon?: string | null
           id?: string
+<<<<<<< HEAD
           is_active?: boolean | null
           name?: string
           slug?: string
           sort_order?: number | null
+=======
+          name?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           updated_at?: string
         }
         Relationships: []
@@ -238,11 +363,17 @@ export type Database = {
           created_at: string
           file_name: string | null
           file_url: string | null
+<<<<<<< HEAD
           gradient_color: string | null
           id: string
           image_url: string | null
           is_deleted: boolean
           is_recalled: boolean
+=======
+          id: string
+          image_url: string | null
+          is_deleted: boolean | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id: string
         }
         Insert: {
@@ -250,11 +381,17 @@ export type Database = {
           created_at?: string
           file_name?: string | null
           file_url?: string | null
+<<<<<<< HEAD
           gradient_color?: string | null
           id?: string
           image_url?: string | null
           is_deleted?: boolean
           is_recalled?: boolean
+=======
+          id?: string
+          image_url?: string | null
+          is_deleted?: boolean | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id: string
         }
         Update: {
@@ -262,6 +399,7 @@ export type Database = {
           created_at?: string
           file_name?: string | null
           file_url?: string | null
+<<<<<<< HEAD
           gradient_color?: string | null
           id?: string
           image_url?: string | null
@@ -410,6 +548,11 @@ export type Database = {
           id?: string
           reference_id?: string | null
           type?: string
+=======
+          id?: string
+          image_url?: string | null
+          is_deleted?: boolean | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id?: string
         }
         Relationships: []
@@ -422,7 +565,11 @@ export type Database = {
           approved_by: string | null
           created_at: string
           id: string
+<<<<<<< HEAD
           receipt_url: string | null
+=======
+          receipt_url: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           status: string
           updated_at: string
           user_id: string
@@ -434,7 +581,11 @@ export type Database = {
           approved_by?: string | null
           created_at?: string
           id?: string
+<<<<<<< HEAD
           receipt_url?: string | null
+=======
+          receipt_url: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           status?: string
           updated_at?: string
           user_id: string
@@ -446,6 +597,7 @@ export type Database = {
           approved_by?: string | null
           created_at?: string
           id?: string
+<<<<<<< HEAD
           receipt_url?: string | null
           status?: string
           updated_at?: string
@@ -741,6 +893,9 @@ export type Database = {
           created_at?: string
           friend_id?: string
           id?: string
+=======
+          receipt_url?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           status?: string
           updated_at?: string
           user_id?: string
@@ -786,6 +941,7 @@ export type Database = {
           amount: number
           approved_at: string | null
           approved_by: string | null
+<<<<<<< HEAD
           buyer_id: string
           created_at: string
           id: string
@@ -814,12 +970,35 @@ export type Database = {
           status?: string
           updated_at?: string
           user_id?: string | null
+=======
+          created_at: string
+          id: string
+          payment_note: string | null
+          product_id: string | null
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          account_id?: string | null
+          amount: number
+          approved_at?: string | null
+          approved_by?: string | null
+          created_at?: string
+          id?: string
+          payment_note?: string | null
+          product_id?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Update: {
           account_id?: string | null
           amount?: number
           approved_at?: string | null
           approved_by?: string | null
+<<<<<<< HEAD
           buyer_id?: string
           created_at?: string
           id?: string
@@ -831,6 +1010,15 @@ export type Database = {
           status?: string
           updated_at?: string
           user_id?: string | null
+=======
+          created_at?: string
+          id?: string
+          payment_note?: string | null
+          product_id?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Relationships: [
           {
@@ -854,6 +1042,7 @@ export type Database = {
             referencedRelation: "products"
             referencedColumns: ["id"]
           },
+<<<<<<< HEAD
           {
             foreignKeyName: "orders_seller_id_fkey"
             columns: ["seller_id"]
@@ -868,29 +1057,49 @@ export type Database = {
             referencedRelation: "sellers_public"
             referencedColumns: ["id"]
           },
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         ]
       }
       otp_codes: {
         Row: {
+<<<<<<< HEAD
           attempts: number | null
           code: string
           created_at: string | null
+=======
+          attempts: number
+          code: string
+          created_at: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           email: string
           expires_at: string
           id: string
         }
         Insert: {
+<<<<<<< HEAD
           attempts?: number | null
           code: string
           created_at?: string | null
+=======
+          attempts?: number
+          code: string
+          created_at?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           email: string
           expires_at: string
           id?: string
         }
         Update: {
+<<<<<<< HEAD
           attempts?: number | null
           code?: string
           created_at?: string | null
+=======
+          attempts?: number
+          code?: string
+          created_at?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           email?: string
           expires_at?: string
           id?: string
@@ -902,24 +1111,39 @@ export type Database = {
           content: string
           created_at: string
           id: string
+<<<<<<< HEAD
           is_deleted: boolean
           post_id: string
+=======
+          post_id: string
+          updated_at: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id: string
         }
         Insert: {
           content: string
           created_at?: string
           id?: string
+<<<<<<< HEAD
           is_deleted?: boolean
           post_id: string
+=======
+          post_id: string
+          updated_at?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id: string
         }
         Update: {
           content?: string
           created_at?: string
           id?: string
+<<<<<<< HEAD
           is_deleted?: boolean
           post_id?: string
+=======
+          post_id?: string
+          updated_at?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id?: string
         }
         Relationships: [
@@ -966,36 +1190,52 @@ export type Database = {
           content: string
           created_at: string
           created_by: string | null
+<<<<<<< HEAD
           description: string | null
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           id: string
           image_url: string | null
           is_published: boolean
           title: string
           updated_at: string
+<<<<<<< HEAD
           views: number
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Insert: {
           content: string
           created_at?: string
           created_by?: string | null
+<<<<<<< HEAD
           description?: string | null
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           id?: string
           image_url?: string | null
           is_published?: boolean
           title: string
           updated_at?: string
+<<<<<<< HEAD
           views?: number
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Update: {
           content?: string
           created_at?: string
           created_by?: string | null
+<<<<<<< HEAD
           description?: string | null
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           id?: string
           image_url?: string | null
           is_published?: boolean
           title?: string
           updated_at?: string
+<<<<<<< HEAD
           views?: number
         }
         Relationships: []
@@ -1030,18 +1270,25 @@ export type Database = {
           is_recalled?: boolean
           receiver_id?: string
           sender_id?: string
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Relationships: []
       }
       products: {
         Row: {
+<<<<<<< HEAD
           badge: string | null
           category: string
           category_id: string | null
+=======
+          category: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           created_at: string
           created_by: string | null
           description: string | null
           download_url: string | null
+<<<<<<< HEAD
           icon: string | null
           id: string
           image_url: string | null
@@ -1051,19 +1298,30 @@ export type Database = {
           price: number
           rating: number | null
           sales: number | null
+=======
+          id: string
+          image_url: string | null
+          is_free: boolean
+          price: number
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           seller_id: string | null
           tech_stack: string[] | null
           title: string
           updated_at: string
         }
         Insert: {
+<<<<<<< HEAD
           badge?: string | null
           category?: string
           category_id?: string | null
+=======
+          category?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           created_at?: string
           created_by?: string | null
           description?: string | null
           download_url?: string | null
+<<<<<<< HEAD
           icon?: string | null
           id?: string
           image_url?: string | null
@@ -1073,19 +1331,30 @@ export type Database = {
           price?: number
           rating?: number | null
           sales?: number | null
+=======
+          id?: string
+          image_url?: string | null
+          is_free?: boolean
+          price?: number
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           seller_id?: string | null
           tech_stack?: string[] | null
           title: string
           updated_at?: string
         }
         Update: {
+<<<<<<< HEAD
           badge?: string | null
           category?: string
           category_id?: string | null
+=======
+          category?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           created_at?: string
           created_by?: string | null
           description?: string | null
           download_url?: string | null
+<<<<<<< HEAD
           icon?: string | null
           id?: string
           image_url?: string | null
@@ -1095,6 +1364,12 @@ export type Database = {
           price?: number
           rating?: number | null
           sales?: number | null
+=======
+          id?: string
+          image_url?: string | null
+          is_free?: boolean
+          price?: number
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           seller_id?: string | null
           tech_stack?: string[] | null
           title?: string
@@ -1102,6 +1377,7 @@ export type Database = {
         }
         Relationships: [
           {
+<<<<<<< HEAD
             foreignKeyName: "products_category_id_fkey"
             columns: ["category_id"]
             isOneToOne: false
@@ -1109,6 +1385,8 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
             foreignKeyName: "products_seller_id_fkey"
             columns: ["seller_id"]
             isOneToOne: false
@@ -1130,9 +1408,12 @@ export type Database = {
           created_at: string
           display_name: string | null
           id: string
+<<<<<<< HEAD
           phone: string | null
           referral_code: string | null
           updated_at: string
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id: string
         }
         Insert: {
@@ -1140,9 +1421,12 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           id?: string
+<<<<<<< HEAD
           phone?: string | null
           referral_code?: string | null
           updated_at?: string
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id: string
         }
         Update: {
@@ -1150,13 +1434,17 @@ export type Database = {
           created_at?: string
           display_name?: string | null
           id?: string
+<<<<<<< HEAD
           phone?: string | null
           referral_code?: string | null
           updated_at?: string
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           user_id?: string
         }
         Relationships: []
       }
+<<<<<<< HEAD
       referrals: {
         Row: {
           coins_rewarded: number | null
@@ -1264,13 +1552,19 @@ export type Database = {
         }
         Relationships: []
       }
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       seller_coins: {
         Row: {
           balance: number
           created_at: string
           id: string
           seller_id: string
+<<<<<<< HEAD
           total_earned: number | null
+=======
+          total_earned: number
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           updated_at: string
         }
         Insert: {
@@ -1278,7 +1572,11 @@ export type Database = {
           created_at?: string
           id?: string
           seller_id: string
+<<<<<<< HEAD
           total_earned?: number | null
+=======
+          total_earned?: number
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           updated_at?: string
         }
         Update: {
@@ -1286,7 +1584,11 @@ export type Database = {
           created_at?: string
           id?: string
           seller_id?: string
+<<<<<<< HEAD
           total_earned?: number | null
+=======
+          total_earned?: number
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           updated_at?: string
         }
         Relationships: [
@@ -1306,6 +1608,7 @@ export type Database = {
           },
         ]
       }
+<<<<<<< HEAD
       seller_requests: {
         Row: {
           created_at: string
@@ -1345,6 +1648,8 @@ export type Database = {
         }
         Relationships: []
       }
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       sellers: {
         Row: {
           avatar_url: string | null
@@ -1353,11 +1658,17 @@ export type Database = {
           bank_name: string | null
           bank_qr_url: string | null
           created_at: string
+<<<<<<< HEAD
           description: string | null
           display_name: string
           id: string
           is_profile_complete: boolean
           is_verified: boolean
+=======
+          display_name: string
+          id: string
+          is_profile_complete: boolean
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           phone: string | null
           updated_at: string
           user_id: string
@@ -1369,11 +1680,17 @@ export type Database = {
           bank_name?: string | null
           bank_qr_url?: string | null
           created_at?: string
+<<<<<<< HEAD
           description?: string | null
           display_name: string
           id?: string
           is_profile_complete?: boolean
           is_verified?: boolean
+=======
+          display_name: string
+          id?: string
+          is_profile_complete?: boolean
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           phone?: string | null
           updated_at?: string
           user_id: string
@@ -1385,17 +1702,24 @@ export type Database = {
           bank_name?: string | null
           bank_qr_url?: string | null
           created_at?: string
+<<<<<<< HEAD
           description?: string | null
           display_name?: string
           id?: string
           is_profile_complete?: boolean
           is_verified?: boolean
+=======
+          display_name?: string
+          id?: string
+          is_profile_complete?: boolean
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           phone?: string | null
           updated_at?: string
           user_id?: string
         }
         Relationships: []
       }
+<<<<<<< HEAD
       site_settings: {
         Row: {
           id: string
@@ -1500,6 +1824,8 @@ export type Database = {
           },
         ]
       }
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       user_coins: {
         Row: {
           balance: number
@@ -1524,6 +1850,7 @@ export type Database = {
         }
         Relationships: []
       }
+<<<<<<< HEAD
       user_onboarding: {
         Row: {
           completed_at: string | null
@@ -1548,30 +1875,42 @@ export type Database = {
         }
         Relationships: []
       }
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       user_roles: {
         Row: {
           created_at: string
           id: string
+<<<<<<< HEAD
           protected: boolean | null
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           role: Database["public"]["Enums"]["app_role"]
           user_id: string
         }
         Insert: {
           created_at?: string
           id?: string
+<<<<<<< HEAD
           protected?: boolean | null
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           role?: Database["public"]["Enums"]["app_role"]
           user_id: string
         }
         Update: {
           created_at?: string
           id?: string
+<<<<<<< HEAD
           protected?: boolean | null
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
         }
         Relationships: []
       }
+<<<<<<< HEAD
       user_wallets: {
         Row: {
           balance: number
@@ -1620,13 +1959,21 @@ export type Database = {
         }
         Relationships: []
       }
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
       withdrawal_requests: {
         Row: {
           admin_note: string | null
           amount: number
+<<<<<<< HEAD
           bank_account_name: string | null
           bank_account_number: string | null
           bank_name: string | null
+=======
+          bank_account_name: string
+          bank_account_number: string
+          bank_name: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           bank_qr_url: string | null
           created_at: string
           id: string
@@ -1634,13 +1981,23 @@ export type Database = {
           processed_by: string | null
           seller_id: string
           status: string
+<<<<<<< HEAD
+=======
+          updated_at: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Insert: {
           admin_note?: string | null
           amount: number
+<<<<<<< HEAD
           bank_account_name?: string | null
           bank_account_number?: string | null
           bank_name?: string | null
+=======
+          bank_account_name: string
+          bank_account_number: string
+          bank_name: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           bank_qr_url?: string | null
           created_at?: string
           id?: string
@@ -1648,13 +2005,23 @@ export type Database = {
           processed_by?: string | null
           seller_id: string
           status?: string
+<<<<<<< HEAD
+=======
+          updated_at?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Update: {
           admin_note?: string | null
           amount?: number
+<<<<<<< HEAD
           bank_account_name?: string | null
           bank_account_number?: string | null
           bank_name?: string | null
+=======
+          bank_account_name?: string
+          bank_account_number?: string
+          bank_name?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           bank_qr_url?: string | null
           created_at?: string
           id?: string
@@ -1662,6 +2029,10 @@ export type Database = {
           processed_by?: string | null
           seller_id?: string
           status?: string
+<<<<<<< HEAD
+=======
+          updated_at?: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Relationships: [
           {
@@ -1680,6 +2051,7 @@ export type Database = {
           },
         ]
       }
+<<<<<<< HEAD
       zalo_bot_rentals: {
         Row: {
           created_at: string
@@ -1725,10 +2097,13 @@ export type Database = {
         }
         Relationships: []
       }
+=======
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     }
     Views: {
       accounts_public: {
         Row: {
+<<<<<<< HEAD
           account_type: string | null
           category: string | null
           created_at: string | null
@@ -1740,11 +2115,22 @@ export type Database = {
           is_free: boolean | null
           is_sold: boolean | null
           platform: string | null
+=======
+          account_username: string | null
+          category: string | null
+          created_at: string | null
+          description: string | null
+          id: string | null
+          image_url: string | null
+          is_free: boolean | null
+          is_sold: boolean | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           price: number | null
           seller_id: string | null
           title: string | null
         }
         Insert: {
+<<<<<<< HEAD
           account_type?: string | null
           category?: string | null
           created_at?: string | null
@@ -1756,11 +2142,22 @@ export type Database = {
           is_free?: boolean | null
           is_sold?: boolean | null
           platform?: string | null
+=======
+          account_username?: string | null
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string | null
+          image_url?: string | null
+          is_free?: boolean | null
+          is_sold?: boolean | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           price?: number | null
           seller_id?: string | null
           title?: string | null
         }
         Update: {
+<<<<<<< HEAD
           account_type?: string | null
           category?: string | null
           created_at?: string | null
@@ -1772,6 +2169,16 @@ export type Database = {
           is_free?: boolean | null
           is_sold?: boolean | null
           platform?: string | null
+=======
+          account_username?: string | null
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string | null
+          image_url?: string | null
+          is_free?: boolean | null
+          is_sold?: boolean | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
           price?: number | null
           seller_id?: string | null
           title?: string | null
@@ -1796,6 +2203,7 @@ export type Database = {
       sellers_public: {
         Row: {
           avatar_url: string | null
+<<<<<<< HEAD
           description: string | null
           display_name: string | null
           id: string | null
@@ -1814,11 +2222,26 @@ export type Database = {
           display_name?: string | null
           id?: string | null
           is_verified?: boolean | null
+=======
+          display_name: string | null
+          id: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          display_name?: string | null
+          id?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          display_name?: string | null
+          id?: string | null
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }
         Relationships: []
       }
     }
     Functions: {
+<<<<<<< HEAD
       get_public_seller_info: {
         Args: { p_seller_id: string }
         Returns: {
@@ -1827,6 +2250,14 @@ export type Database = {
           display_name: string
           id: string
           is_verified: boolean
+=======
+      get_account_credentials_for_buyer: {
+        Args: { p_account_id: string }
+        Returns: {
+          account_email: string
+          account_password: string
+          account_phone: string
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         }[]
       }
       has_role: {
@@ -1836,10 +2267,16 @@ export type Database = {
         }
         Returns: boolean
       }
+<<<<<<< HEAD
       is_admin: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
       app_role: "admin" | "seller" | "user"
+=======
+    }
+    Enums: {
+      app_role: "admin" | "user"
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1967,7 +2404,11 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+<<<<<<< HEAD
       app_role: ["admin", "seller", "user"],
+=======
+      app_role: ["admin", "user"],
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
     },
   },
 } as const

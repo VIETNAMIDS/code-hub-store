@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// @ts-nocheck
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -47,7 +51,11 @@ export function DiscountCode({
     
     try {
       // Fetch the discount code from database
+<<<<<<< HEAD
       const { data: discountData, error: fetchError } = await supabase
+=======
+      const { data: discountData, error: fetchError } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('discount_codes')
         .select('*')
         .eq('code', upperCode)

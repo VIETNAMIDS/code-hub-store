@@ -65,7 +65,11 @@ export function DiscountCodeManager() {
 
   const fetchCodes = async () => {
     try {
+<<<<<<< HEAD
       const { data, error } = await supabase
+=======
+      const { data, error } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('discount_codes')
         .select('*')
         .order('created_at', { ascending: false });
@@ -91,7 +95,11 @@ export function DiscountCodeManager() {
 
     setSaving(true);
     try {
+<<<<<<< HEAD
       const { error } = await supabase
+=======
+      const { error } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('discount_codes')
         .insert({
           code: newCode.code.toUpperCase(),
@@ -133,7 +141,11 @@ export function DiscountCodeManager() {
 
   const toggleActive = async (id: string, isActive: boolean) => {
     try {
+<<<<<<< HEAD
       const { error } = await supabase
+=======
+      const { error } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('discount_codes')
         .update({ is_active: !isActive, updated_at: new Date().toISOString() })
         .eq('id', id);
@@ -153,7 +165,11 @@ export function DiscountCodeManager() {
     if (!confirm('Bạn có chắc muốn xóa mã này?')) return;
     
     try {
+<<<<<<< HEAD
       const { error } = await supabase
+=======
+      const { error } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('discount_codes')
         .delete()
         .eq('id', id);
@@ -174,7 +190,11 @@ export function DiscountCodeManager() {
     const code = `BONZ${amount}K`;
     setSaving(true);
     try {
+<<<<<<< HEAD
       const { error } = await supabase
+=======
+      const { error } = await (supabase as any)
+>>>>>>> ced71216bcb5cdbd3cebab38414a2689cff63f78
         .from('discount_codes')
         .insert({
           code,
